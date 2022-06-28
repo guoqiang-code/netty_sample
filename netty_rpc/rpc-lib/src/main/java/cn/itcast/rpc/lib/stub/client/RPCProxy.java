@@ -22,6 +22,7 @@ import java.lang.reflect.Proxy;
  */
 public class RPCProxy {
     public static <T> T create(Class<T> target) {
+        // 2
         return (T) proxy(target, "127.0.0.1", 9999);
     }
 
@@ -55,6 +56,7 @@ public class RPCProxy {
          */
         private final int port;
 
+        // 3
         public RemoteMethodCall(Class<?> targetClass, String host, int port) {
             this.targetClass = targetClass;
             this.host = host;
@@ -63,7 +65,7 @@ public class RPCProxy {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            //封装调用信息到ClassInfo
+            //封装调用信息到ClassInfo 4
             CallInfo callInfo = new CallInfo();
             callInfo.setClassName(targetClass.getName());
             callInfo.setMethodName(method.getName());

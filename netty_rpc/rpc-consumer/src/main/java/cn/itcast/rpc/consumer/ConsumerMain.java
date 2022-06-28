@@ -9,7 +9,9 @@ import cn.itcast.rpc.provider.service.BookService;
  */
 public class ConsumerMain {
     public static void main(String[] args) {
-        //远程调用，获取热门书籍
+        // 设置将proxy生成的代理类输出到项目根路径
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+        //远程调用，获取热门书籍  1
         BookService bookService = RPCProxy.create(BookService.class);
         Book hotBook = bookService.getHotBook();
         System.out.println("远程RPC调用获取热门书籍：" + hotBook);

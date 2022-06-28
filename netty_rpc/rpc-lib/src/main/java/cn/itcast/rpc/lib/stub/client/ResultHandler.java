@@ -13,7 +13,7 @@ public class ResultHandler extends ChannelInboundHandlerAdapter {
     private Object response;
 
     /**
-     * 读取服务器端返回的数据(远程调用的结果)
+     * 读取服务器端返回的数据(远程调用的结果)  5
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object value) throws Exception {
@@ -21,6 +21,7 @@ public class ResultHandler extends ChannelInboundHandlerAdapter {
         ctx.close();
     }
 
+    // 6
     public Object getResponse() {
         return response;
     }

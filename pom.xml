@@ -12,13 +12,13 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.8.Final</version>
+            <version>4.1.77.Final</version>
         </dependency>
 
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.6.1</version>
+            <version>3.21.1</version>
         </dependency>
     </dependencies>
 
